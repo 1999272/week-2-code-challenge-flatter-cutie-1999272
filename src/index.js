@@ -31,3 +31,15 @@ function fetchCharacters() {
 function showCharacterDetails(character) {
     currentCharacter = character;
     detailedInfo.innerHTML = "";
+
+    // Create elements for character details
+  const nameEl = document.createElement("h2");
+  nameEl.textContent = character.name;
+
+  const imgEl = document.createElement("img");
+  imgEl.src = character.image;
+  imgEl.alt = character.name;
+
+  const votesEl = document.createElement("p");
+  votesEl.id = "vote-count"; 
+  votesEl.textContent = `Votes: ${character.votes}`;
