@@ -49,3 +49,22 @@ function showCharacterDetails(character) {
   detailedInfo.appendChild(imgEl);
   detailedInfo.appendChild(votesEl);
 }
+
+// Handle the votes form submission
+votesForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+  
+    // Get the vote amount from the form input (assuming a single input field)
+    const voteInput = event.target.querySelector("input");
+    const additionalVotes = parseInt(voteInput.value) || 0;
+
+    if (currentCharacter) {
+        // Add the votes (cumulative, no persistence required)
+        currentCharacter.votes += additionalVotes;
+    
+        // Update the displayed vote count
+        const votesEl = document.getElementById("vote-count");
+        if (votesEl) {
+          votesEl.textContent = `Votes: ${currentCharacter.votes}`;
+        }
+      }
