@@ -27,3 +27,7 @@ function fetchCharacters() {
     .catch((error) => console.error("Error fetching characters:", error));
 }
 
+// Display the details of the selected character in the detailed-info div
+function showCharacterDetails(character) {
+    currentCharacter = character;
+    detailedInfo.innerHTML = "";
