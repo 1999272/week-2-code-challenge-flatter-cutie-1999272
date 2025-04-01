@@ -43,3 +43,9 @@ function showCharacterDetails(character) {
   const votesEl = document.createElement("p");
   votesEl.id = "vote-count"; 
   votesEl.textContent = `Votes: ${character.votes}`;
+
+  // Append the details to the detailed-info div
+  detailedInfo.appendChild(nameEl);
+  detailedInfo.appendChild(imgEl);
+  detailedInfo.appendChild(votesEl);
+}
